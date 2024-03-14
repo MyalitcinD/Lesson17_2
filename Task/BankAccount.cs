@@ -24,7 +24,8 @@ namespace Task
         {
             this.accountNumber = AccNumber;
         }
-        public T getAccNumber() {
+        public T getAccNumber()
+        {
             return accountNumber;
         }
         public void setAccBalance(double AccBalance)
