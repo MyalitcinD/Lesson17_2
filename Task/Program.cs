@@ -18,21 +18,20 @@ namespace Task
             double accBalance = Convert.ToDouble(Console.ReadLine());
             BankAccount<int> bankAccInt = new BankAccount<int>(accNumInt, accFullName, accBalance);
 
-            Console.Write("Введите строковый номер аккаунта: ");
-            string accNumStr = Console.ReadLine();
-            Console.Write("Введите ФИО: ");
-            accFullName = Console.ReadLine();
-            Console.Write("Введите баланс аккаунта: ");
-            accBalance = Convert.ToDouble(Console.ReadLine());
-
             BankAccount<string> bankAccStr = new BankAccount<string>();
-            bankAccStr.setAccNumber(accNumStr);
-            bankAccStr.setAccName(accFullName);
-            bankAccStr.setAccBalance(accBalance);
+            bankAccStr.Input();
+
+
+
+            BankAccount<string> bankAccStr2 = new BankAccount<string>();
+            bankAccStr2.setAccNumber(bankAccStr.getAccNumber() + "test");
+            bankAccStr2.setAccName(bankAccStr.getAccName() + "test");
+            bankAccStr2.setAccBalance(bankAccStr.getAccBalance() / 2);
 
             Console.WriteLine();
             Console.WriteLine(bankAccInt.GetInfo());
             Console.WriteLine(bankAccStr.GetInfo());
+            Console.WriteLine(bankAccStr2.GetInfo());
 
             Console.ReadKey();
 

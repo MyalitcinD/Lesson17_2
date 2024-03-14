@@ -48,5 +48,16 @@ namespace Task
         {
             return $"Номер акканта: {accountNumber} / ФИО: {accountFullName} / Баланс : {accountBalance}";
         }
+
+        public void Input()
+        {
+            Console.Write("Введите строковый номер аккаунта: ");
+            accountNumber = (T)Convert.ChangeType(Console.ReadLine(), typeof(T)); //Console.ReadLine();
+            Console.Write("Введите ФИО: ");
+            accountFullName = Console.ReadLine();
+            Console.Write("Введите баланс аккаунта: ");
+            accountBalance = Convert.ToDouble(Console.ReadLine());
+
+        }
     }
 }
